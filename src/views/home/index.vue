@@ -1,12 +1,31 @@
 <template>
-    <div>index</div>
+    <div>
+        <navbar></navbar>
+        <img src="../../assets/images/logo.png">
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
-export default {
-    components: { }
-}
+import navbar from 'src/components/layout/navbar'
 
+export default {
+    name: 'app',
+    components: { navbar },
+    mounted () {
+        console.log('APP start......')
+    }
+}
 </script>
 
-<style scoped></style>
+<style>
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+</style>
+

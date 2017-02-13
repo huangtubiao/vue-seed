@@ -3,17 +3,13 @@
 import Vue from 'vue'
 import VuexRouterSync from 'vuex-router-sync'
 
-import App from './App'
+import router from 'routers'
 import store from './store'
-import router from './router'
 
 VuexRouterSync.sync(store, router)
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
     router,
-    store,
-    template: '<App/>',
-    components: { App }
-})
+    store
+}).$mount('#app');
