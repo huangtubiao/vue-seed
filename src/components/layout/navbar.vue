@@ -1,8 +1,7 @@
 <template>
-    <nav>
+    <nav class="navbar">
         <router-link to="/login">登录</router-link>
         <router-link to="/logout">注册</router-link>
-        <router-link to="/profile">个人信息</router-link>
         <router-link to="/activity/valentine">专题页</router-link>
     </nav>
 </template>
@@ -19,5 +18,8 @@ export default {
 </script>
 
 <style scoped>
-
+.navbar {
+    background-color: #eee;
+    padding: 20px;
+}
 </style>

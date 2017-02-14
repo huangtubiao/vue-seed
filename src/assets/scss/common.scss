@@ -1,0 +1,17 @@
+/**
+ * common scss of all HTML Elements
+ */
+@charset "UTF-8";
+
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    color: #313131;
+    overflow-x: hidden;
+    line-height: 1;
+}
+
+.pull-right {
+    float: right;
+}
