@@ -34,6 +34,7 @@ export default {
     },
     mounted () {
         console.log('欢迎！')
+        // 滚动加载
     },
     methods: {
         // 获取主题数据
@@ -47,7 +48,6 @@ export default {
                 this.topics = topicsData
             }, 2000)
         }
-
     },
     components: { navbar }
 }

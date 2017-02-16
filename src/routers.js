@@ -27,7 +27,8 @@ const router = new VueRouter({
     }, {
         path: '/activity',
         name: 'activity',
-        component: resolve => require(['views/activity/valentine/index.vue'], resolve)
+        component: resolve => require(['views/activity/valentine/index.vue'], resolve),
+        children: []
     }, {
         path: '*',
         redirect: '/'
