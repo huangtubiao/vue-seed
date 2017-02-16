@@ -10,9 +10,6 @@ const router = new VueRouter({
         name: 'home',
         component: resolve => require(['src/app.vue'], resolve)
     }, {
-        path : '/index',
-        component : resolve => require(['src/app.vue'], resolve)
-    }, {
         path: '/login',
         name: 'home.login',
         component: resolve => require(['views/account/login.vue'], resolve)
@@ -27,8 +24,16 @@ const router = new VueRouter({
     }, {
         path: '/activity',
         name: 'activity',
-        component: resolve => require(['views/activity/valentine/index.vue'], resolve),
-        children: []
+        component: resolve => require(['components/layout/activity.vue'], resolve),
+        children: [{
+            path: 'valentine',
+            name: 'activity.valentine',
+            component: resolve => require(['views/activity/valentine/index.vue'], resolve)
+        }, {
+            path: 'weekStar',
+            name: 'activity.weekStar',
+            component: resolve => require(['views/activity/week_star/index.vue'], resolve)
+        }]
     }, {
         path: '*',
         redirect: '/'

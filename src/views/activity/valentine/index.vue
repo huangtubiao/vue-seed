@@ -1,3 +1,3 @@
 <template>
-    <div>专题页</div>
+    <div>情人节活动专题页</div>
 </template>
