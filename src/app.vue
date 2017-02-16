@@ -19,10 +19,11 @@
 </template>
 
 <script>
-require('../assets/scss/index.scss')
+require('./assets/scss/index.scss')
 
 import navbar from 'src/components/layout/navbar'
 import topicsData from 'src/services/topics'
+import topicsService from 'src/services/topicsService'
 
 export default {
     name: 'index',
@@ -38,6 +39,11 @@ export default {
         // 获取主题数据
         getTopics () {
             setTimeout(() => {
+                topicsService.getList().then((response) => {
+
+                }, (response) => {
+
+                })
                 this.topics = topicsData
             }, 2000)
         }

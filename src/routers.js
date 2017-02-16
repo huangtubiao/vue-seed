@@ -8,10 +8,10 @@ const router = new VueRouter({
     routes: [{
         path: '/',
         name: 'home',
-        component: resolve => require(['src/views/app.vue'], resolve)
+        component: resolve => require(['src/app.vue'], resolve)
     }, {
         path : '/index',
-        component : resolve => require(['src/views/app.vue'], resolve)
+        component : resolve => require(['src/app.vue'], resolve)
     }, {
         path: '/login',
         name: 'home.login',
