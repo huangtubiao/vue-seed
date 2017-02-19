@@ -1,0 +1,163 @@
+{
+    "message": {
+        "anchors": [
+            {
+                "uid": "wlunm2_561755119",
+                "roomid": "520698",
+                "name": "佳肴花",
+                "pic51": "http://003.img.qf.56.itc.cn/group2/M10/F9/40/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0ODI1MDIxNTU1MDY=/cut@m=crop,x=0,y=66,w=1002,h=1002_cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://005.img.qf.56.itc.cn/group3/M09/61/82/MTAuMTAuODguODQ=/dXBsb2FkRmlsZV8xXzE0NzIwNTEwMzQxMDc=/cut@m=crop,x=276,y=0,w=1635,h=2370_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 1,
+                "focus": 10134,
+                "mic": 0,
+                "weeklyStar": 1,
+                "yearParty": 1
+            },
+            {
+                "uid": "qq-rnkxuazvre",
+                "roomid": "6173762",
+                "name": "东航空姐金阿钦",
+                "pic51": "http://005.img.qf.56.itc.cn//group3/M04/0A/B2/MTAuMTAuODguODM=/dXBsb2FkRmlsZV8xXzE0ODYxOTg3MDM2MDY=/cut@m=crop,x=0,y=0,w=510,h=510_cut@m=resize,w=510,h=510.png",
+                "pic74": "http://005.img.qf.56.itc.cn//group3/M01/0A/49/MTAuMTAuODguODM=/dXBsb2FkRmlsZV8xXzE0ODU0NTc2ODk4Mzg=/cut@m=crop,x=0,y=0,w=510,h=740_cut@m=resize,w=510,h=740.png",
+                "live": 1,
+                "push": 2,
+                "focus": 3666,
+                "mic": 0,
+                "weeklyStar": 1,
+                "yearParty": 0
+            },
+            {
+                "uid": "qq-bugsdpptdg",
+                "roomid": "2712601",
+                "name": "ღ北北一笑很倾城",
+                "pic51": "http://004.img.qf.56.itc.cn/group2/M06/8C/42/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0ODUwMDEzMjY4MDc=/cut@m=crop,x=0,y=7,w=602,h=602_cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://003.img.qf.56.itc.cn/group3/M10/0A/2B/MTAuMTAuODguODM=/dXBsb2FkRmlsZV8xXzE0ODUwMDEzNDE1OTc=/cut@m=crop,x=4,y=0,w=552,h=800_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 1,
+                "focus": 3529,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "wlunm388_561771725",
+                "roomid": "2193231",
+                "name": "米雪爱你们呦",
+                "pic51": "http://002.img.qf.56.itc.cn/group2/M11/8D/04/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0ODY3NzkyMTMzMTA=/cut@m=crop,x=0,y=74,w=963,h=963_cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://002.img.qf.56.itc.cn/group2/M12/8D/04/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0ODY3NzkyMzQ4MjU=/cut@m=crop,x=142,y=0,w=759,h=1100_cut@m=resize,w=510,h=740.jpg",
+                "live": 0,
+                "push": 2,
+                "focus": 2430,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "qq-2253843",
+                "roomid": "1960188",
+                "name": "JZ珂的大叔诸侯啦",
+                "pic51": "http://002.img.qf.56.itc.cn/group3/M12/F2/E1/MTAuMTAuODguODM=/dXBsb2FkRmlsZV8xXzE0ODAxMTcxNTI5MTE=/cut@m=crop,x=0,y=113,w=963,h=963_cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://005.img.qf.56.itc.cn/group2/M08/F4/90/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0ODE3Nzg3OTA2NDg=/cut@m=crop,x=0,y=0,w=1109,h=1609_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 1,
+                "focus": 3238,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "wlunm444_561941987",
+                "roomid": "6780701",
+                "name": "茹宝想要爱你",
+                "pic51": "http://003.img.qf.56.itc.cn/group2/M07/AB/A7/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0NzcwMTczMDE3OTg=/cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://002.img.qf.56.itc.cn//group2/M09/8C/D1/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0ODYyOTI5MTM2NzA=/cut@m=crop,x=0,y=0,w=510,h=740_cut@m=resize,w=510,h=740.png",
+                "live": 0,
+                "push": 2,
+                "focus": 1764,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "qq-2117181",
+                "roomid": "1358728",
+                "name": "三鱼丶锐萌萌",
+                "pic51": "http://004.img.qf.56.itc.cn/group2/M07/8D/41/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0ODczOTg5NTIyMTk=/cut@m=crop,x=120,y=108,w=1675,h=1675_cut@m=resize,w=510,h=510.png",
+                "pic74": "http://005.img.qf.56.itc.cn/group3/M11/0B/2A/MTAuMTAuODguODM=/dXBsb2FkRmlsZV8xXzE0ODczOTg5NTg2OTU=/cut@m=crop,x=48,y=108,w=1747,h=2533_cut@m=resize,w=510,h=740.png",
+                "live": 1,
+                "push": 1,
+                "focus": 2135,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "wx-xhhnncrxlu",
+                "roomid": "5016661",
+                "name": "李老师我的本命年",
+                "pic51": "http://004.img.qf.56.itc.cn/group3/M05/9A/B7/MTAuMTAuODguODM=/dXBsb2FkRmlsZV8xXzE0NzU0MjI5MjQ0OTQ=/cut@m=crop,x=0,y=0,w=1083,h=1083_cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://002.img.qf.56.itc.cn/group2/M03/90/32/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0NzU0MjI4OTY4NDE=/cut@m=crop,x=64,y=0,w=993,h=1440_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 2,
+                "focus": 3116,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "wlunm474_561909606",
+                "roomid": "9746828",
+                "name": "Amy宝@紫霞仙子",
+                "pic51": "http://004.img.qf.56.itc.cn/group3/M09/2D/43/MTAuMTAuODguODQ=/dXBsb2FkRmlsZV8xXzE0Njk0MTEwOTEwNzU=/cut@m=crop,x=0,y=253,w=902,h=902_cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://004.img.qf.56.itc.cn/group3/M09/2D/43/MTAuMTAuODguODQ=/dXBsb2FkRmlsZV8xXzE0Njk0MTEwOTEwNzU=/cut@m=crop,x=0,y=34,w=902,h=1308_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 2,
+                "focus": 974,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "qq-9008095",
+                "roomid": "6609745",
+                "name": "瑶宝宝回归求守护",
+                "pic51": "http://003.img.qf.56.itc.cn/group2/M02/8C/D7/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0ODYzNjUxNjU4MjI=/cut@m=crop,x=0,y=0,w=1219,h=1219_cut@m=resize,w=510,h=510.jpg",
+                "pic74": "http://003.img.qf.56.itc.cn/group2/M01/8D/44/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0ODc0MjA1MjgzMTI=/cut@m=crop,x=0,y=0,w=1117,h=1620_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 1,
+                "focus": 2585,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "wlunm335_562012766",
+                "roomid": "2078053",
+                "name": "熙儿英语老师",
+                "pic51": "http://005.img.qf.56.itc.cn//group2/M07/DB/96/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0Nzg2NTkyNjEwMjY=/cut@m=crop,x=0,y=0,w=510,h=510_cut@m=resize,w=510,h=510.png",
+                "pic74": "http://003.img.qf.56.itc.cn/group3/M06/09/BD/MTAuMTAuODguODQ=/dXBsb2FkRmlsZV8xXzE0ODQwMzk3OTA1NDI=/cut@m=crop,x=162,y=0,w=664,h=963_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 2,
+                "focus": 2746,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            },
+            {
+                "uid": "shunm_568142542",
+                "roomid": "3698992",
+                "name": "非凡゛李欣然",
+                "pic51": "http://001.img.qf.56.itc.cn/group2/M05/8C/C7/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0ODYxODc1MjUwMTk=/cut@m=crop,x=0,y=98,w=511,h=511_cut@m=resize,w=510,h=510.png",
+                "pic74": "http://005.img.qf.56.itc.cn/group2/M04/8C/C7/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0ODYxODUzMDAyMTc=/cut@m=crop,x=944,y=751,w=1574,h=2282_cut@m=resize,w=510,h=740.jpg",
+                "live": 1,
+                "push": 1,
+                "focus": 1865,
+                "mic": 0,
+                "weeklyStar": 0,
+                "yearParty": 0
+            }
+        ]
+    },
+    "status": 200
+}

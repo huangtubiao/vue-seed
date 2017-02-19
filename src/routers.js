@@ -10,6 +10,14 @@ const router = new VueRouter({
         name: 'home',
         component: resolve => require(['src/app.vue'], resolve)
     }, {
+        path: '/list',
+        name: 'list',
+        component: resolve => require(['src/app.vue'], resolve)
+    }, {
+        path: '/room/:id',
+        name: 'room',
+        component: resolve => require(['views/room/index.vue'], resolve)
+    }, {
         path: '/login',
         name: 'home.login',
         component: resolve => require(['views/account/login.vue'], resolve)
@@ -17,10 +25,6 @@ const router = new VueRouter({
         path: '/logout',
         name: 'home.logout',
         component: resolve => require(['views/account/logout.vue'], resolve)
-    }, {
-        path: '/topic/:id',
-        name: 'topic',
-        component: resolve => require(['views/topic/index.vue'], resolve)
     }, {
         path: '/activity',
         name: 'activity',

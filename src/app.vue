@@ -1,15 +1,21 @@
 <template>
     <div>
+        <headerLogo></headerLogo>
         <navbar></navbar>
-        <!-- <img src="../assets/images/logo.png"> -->
         <section id="page">
             <!-- 首页列表 -->
-            <ul class="posts-list">
-                <li v-for="item in topics" :key="item.id">
-                    <router-link :to="{ name: 'topic', params: { id: item.id } }">
+            <ul class="anchors-list">
+                <li v-for="item in anchors" :key="item.uid">
+                    <router-link :to="{ name: 'room', params: { id: item.roomid } }">
                         <div class="content">
-                            <img class="avatar inline-block" :src="item.avatar_url">
-                            <div v-text="item.title" class="info inline-block"></div>
+                            <img class="avatar inline-block" :src="item.pic51">
+                            <div class="info">
+                                <div class="info-name" v-text="item.name"></div>
+                                <div class="info-focus">
+                                    观众数：<span v-text="item.focus"></span>
+                                    <span class="info-live" v-if="item.live === 1">直播</span>
+                                </div>
+                            </div>
                         </div>
                     </router-link>
                 </li>
@@ -19,17 +25,18 @@
 </template>
 
 <script>
-    require('./assets/scss/index.scss')
+    require('./assets/less/index.less')
 
-    import navbar from 'src/components/layout/navbar'
-    import topicsData from 'src/services/topics'
+    import headerLogo from 'src/components/header';
+    import navbar from 'src/components/tab'
+    import anchorsData from '../mock/anchors'
     import topicsService from 'src/services/topicsService'
 
     export default {
         name: 'index',
         data () {
             return {
-                topics: this.getTopics()
+                anchors: this.getTopics()
             }
         },
         mounted () {
@@ -37,23 +44,22 @@
             // 滚动加载
         },
         methods: {
-            // 获取主题数据
             getTopics () {
                 setTimeout(() => {
-                    topicsService.getList().then((response) => {
+                    // topicsService.getList().then((response) => {
 
-                    }, (response) => {
+                    // }, (response) => {
 
-                    })
-                    this.topics = topicsData
+                    // })
+                    this.anchors = anchorsData.message.anchors
                 }, 2000)
             }
         },
-        components: { navbar }
+        components: { navbar, headerLogo }
     }
 </script>
 
-<style>
+<style lang="less">
     #app {
         color: #2c3e50;
         background-color:#fff;
@@ -65,25 +71,39 @@
         overflow-x:hidden;
     }
 
-    .posts-list li {
-        padding: 10px 15px;
-        border-bottom: 1px solid #d5dbdb;
-    }
+    .anchors-list {
+        li {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f3f3f3;
+            a {
+                color: initial;
+            }        
+            .content {
+                text-align: left;
+            }
+            .avatar {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin-right: 10px;
+                border: 1px solid #f3f3f3;
+                vertical-align: middle;
+            }
+            .info {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .info-name {
+                margin-bottom: 10px;
+            }
+            .info-live {
+                margin-left: 8px;
+                color: #cb9c64;
+                border: 1px solid #cb9c64;
+                border-radius: 2px;
+            }
+        }
 
-    .posts-list li .content {
-        display: flex;
-    }
-
-    .posts-list li .avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-        border: 1px solid #f3f3f3;
-        vertical-align: middle;
-    }
-
-    .posts-list li .info {
-        line-height: 40px;
     }
 </style>

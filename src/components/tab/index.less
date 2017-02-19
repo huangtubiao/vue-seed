@@ -1,0 +1,30 @@
+.navbar {
+    position: relative;
+    line-height: 45px;
+    background-color: #fff;
+    a {
+        font-size: 17px;
+        color: initial;
+    }
+    &:after {
+        border-bottom: 1px solid #dbdbdb;
+    }
+    .title-list {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+    .title-list li {
+        display: table-cell;
+        box-sizing: border-box;
+        font-size: 16px;
+        text-align: center;
+        color: #777;
+        &.active {
+            border-bottom: 2px solid #cb9c64;
+        }
+    }
+    .title-list li.active a {
+        color: #cb9c64;
+    }
+}
