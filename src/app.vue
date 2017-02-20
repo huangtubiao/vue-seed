@@ -29,8 +29,6 @@
 
     import headerLogo from 'src/components/header';
     import navbar from 'src/components/tab';
-    import anchorsData from '../mock/anchors';
-    import anchorsFocusData from '../mock/anchorsFocus';
     import anchorsService from 'src/services/anchorsService';
 
     export default {
@@ -47,15 +45,13 @@
             if (this.$route.query && this.$route.query.tab) {
                 this.searchKey.tab = this.$route.query.tab;
             }
-
             this.getTopics();
         },
         methods: {
             getTopics () {
                 anchorsService.getList().then((response) => {
-                    console.log(response);
+                    this.anchors = response.body.message.anchors;
                 });
-                this.anchors = anchorsData.message.anchors;
             }
         },
         watch: {
@@ -66,9 +62,9 @@
                     this.anchors = [];
                 }
                 if (to.query.tab === 'focus') {
-                    this.anchors = anchorsFocusData.message.anchors;
+                    alert('我的关注');
                 } else {
-                    this.anchors = anchorsData.message.anchors;
+                    this.getTopics();
                 }
             }
         },

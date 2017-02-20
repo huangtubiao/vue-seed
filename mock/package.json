@@ -23,6 +23,7 @@
     "koa-static": "^2.1.0",
     "koa-swig": "^2.2.1",
     "koa-views": "^5.2.0",
+    "mockjs": "^1.0.1-beta3",
     "monk": "^4.0.0",
     "request": "^2.79.0"
   }

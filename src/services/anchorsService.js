@@ -5,13 +5,16 @@ import xhr from './xhr';
  */
 class AnchorsService {
     /**
-     * 获取主题列表
+     * 获取主播列表
      * @return {Promise}
      */
     getList () {
         return xhr({
             method: 'get',
-            url: '/anchors'
+            url: '/api/home/v4/moreAnchor.h5?index=0&size=12&type=0',
+            options: {
+                callback: 'jsonp_callback_qf56commoreAnchor'
+            }
         });
     }
 }

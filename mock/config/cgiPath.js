@@ -1,7 +1,7 @@
-const baseUrl = 'http://openapi.inews.qq.com/';
+const baseUrl = 'http://qf.56.com/';
 
 const CGI_PATH = {
-    'GET_TOP_NEWS': baseUrl + 'getQQNewsIndexAndItems'
+    'GET_ANCHORS': baseUrl + '/home/v4/moreAnchor.h5'
 };
 
 module.exports = CGI_PATH;

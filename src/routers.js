@@ -18,14 +18,6 @@ const router = new VueRouter({
         name: 'room',
         component: resolve => require(['views/room/index.vue'], resolve)
     }, {
-        path: '/login',
-        name: 'home.login',
-        component: resolve => require(['views/account/login.vue'], resolve)
-    }, {
-        path: '/logout',
-        name: 'home.logout',
-        component: resolve => require(['views/account/logout.vue'], resolve)
-    }, {
         path: '/activity',
         name: 'activity',
         component: resolve => require(['components/layout/activity.vue'], resolve),

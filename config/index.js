@@ -34,7 +34,7 @@ module.exports = {
         // 使用 config/dev.env.js 中定义的编译环境
         env: require('./dev.env'),
         // 运行测试页面的端口
-        port: 8086,
+        port: 9001,
         // 是否自动打开浏览器
         autoOpenBrowser: true,
         // 编译输出的二级目录
@@ -43,8 +43,8 @@ module.exports = {
         assetsPublicPath: '/',
         // 需要 proxyTable 代理的接口（可跨域）
         proxyTable: {
-            '/home': {
-                target: 'http://qf.56.com',
+            '/api/': {
+                target: 'http://localhost:3001',
                 crossOrigin: true,
                 logLevel: 'debug'
             }

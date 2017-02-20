@@ -9,7 +9,9 @@
 - Vuex
 - webpack2
 - ES6 + Babel
-- Sass
+- Sass/Less
+- Eslint
+- Koa
 
 ## Dependences
 
