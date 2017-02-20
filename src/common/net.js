@@ -1,17 +1,15 @@
-function ajax(options) {
-
+function ajax (options) {
     var promise = new Promise(function (resolve, reject) {
-
-        let xhr = new XMLHttpRequest(),
-            url = options.url,
-            paramObj = options.param,
+        let xhr = new XMLHttpRequest();
+        let url = options.url;
+        let paramObj = options.param;
             // success_cb = options.success,
             // error_cb = options.error,
-            uploadProgress = options.uploadProgress,
-            method = options.type || 'GET';
-            method = method.toUpperCase();
+        let uploadProgress = options.uploadProgress;
+        let method = options.type || 'GET';
+        method = method.toUpperCase();
 
-        let cgiSt = Date.now();
+        // let cgiSt = Date.now();
 
         let onDataReturn = data => {
             if (data.ret === 0 || data.ret === -1) {
@@ -30,31 +28,28 @@ function ajax(options) {
         }
 
         try {
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4) {
-                    if(xhr.status == 200) {
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
                         let data = JSON.parse(xhr.responseText);
                         onDataReturn(data);
-
-                    }
-                    else {
-                        error_cb && error_cb({
-                            retcode: xhr.status
-                        });
-
+                    } else {
+                        // error_cb && error_cb({
+                        //     retcode: xhr.status
+                        // });
                     }
                 }
             };
-
-            let paramArray = [], paramString = '';
+            let paramArray = [];
+            // let paramString = '';
             for (let key in paramObj) {
                 paramArray.push(key + '=' + encodeURIComponent(paramObj[key]));
             }
 
             if (method === 'FORM') {
                 let formData = new FormData();
-        　　　　formData.append('file', paramObj['file']);
-        　　　　formData.append('bkn', bkn);
+                formData.append('file', paramObj['file']);
+                formData.append('bkn', bkn);
                 xhr.upload.onprogress = function(e) {
                     if (e.lengthComputable) {
                         uploadProgress(e.loaded, e.total);
@@ -63,40 +58,35 @@ function ajax(options) {
                 xhr.open('POST', url);
                 xhr.withCredentials = true;
         　　　　 xhr.send(formData);
-            }
-            else if (method === 'JSONP') {
+            } else if (method === 'JSONP') {
                 method = 'GET';
-
-                if (!paramObj['callback']) {
-                    error_cb && error_cb({ret: -1});
-                }
-
+                // if (!paramObj['callback']) {
+                //     error_cb && error_cb({ret: -1});
+                // }
                 window[paramObj['callback']] = function(data) {
                     onDataReturn(data);
                 };
                 url += (url.indexOf('?') > -1 ? '&' : '?') + paramArray.join('&');
-                var script = document.createElement("script");
-                var head = document.getElementsByTagName("head")[0];
+                var script = document.createElement('script');
+                var head = document.getElementsByTagName('head')[0];
                 script.src = url;
                 head.appendChild(script);
-            }
-            else {
+            } else {
 
-                if(method === 'GET') {
+                if (method === 'GET') {
                     url += (url.indexOf('?') > -1 ? '&' : '?') + paramArray.join('&');
                 }
 
-                xhr.open(method,url,true);
+                xhr.open(method, url, true);
                 xhr.withCredentials = true;
-                xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.send(method === 'POST' ? paramArray.join('&') : '');
             }
-
         } catch (e) {
             console.error(e);
-        }
+        };
 
-    })
+    });
 
     return promise;
 }

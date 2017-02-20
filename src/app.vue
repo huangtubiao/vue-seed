@@ -25,38 +25,55 @@
 </template>
 
 <script>
-    require('./assets/less/index.less')
+    require('./assets/less/index.less');
 
-    import headerLogo from 'src/components/header'
-    import navbar from 'src/components/tab'
-    import anchorsData from '../mock/anchors'
-    import anchorsService from 'src/services/anchorsService'
+    import headerLogo from 'src/components/header';
+    import navbar from 'src/components/tab';
+    import anchorsData from '../mock/anchors';
+    import anchorsFocusData from '../mock/anchorsFocus';
+    import anchorsService from 'src/services/anchorsService';
 
     export default {
         name: 'index',
         data () {
             return {
-                anchors: this.getTopics()
-            }
+                anchors: [],
+                searchKey: {
+                    tab: 'all'
+                }
+            };
         },
         mounted () {
-            console.log('欢迎！')
-            // 滚动加载
+            if (this.$route.query && this.$route.query.tab) {
+                this.searchKey.tab = this.$route.query.tab;
+            }
+
+            this.getTopics();
         },
         methods: {
             getTopics () {
-                setTimeout(() => {
-                    anchorsService.getList().then((response) => {
-
-                    }, (response) => {
-
-                    })
-                    this.anchors = anchorsData.message.anchors
-                }, 2000)
+                anchorsService.getList().then((response) => {
+                    console.log(response);
+                });
+                this.anchors = anchorsData.message.anchors;
+            }
+        },
+        watch: {
+            // 切换路由触发
+            '$route' (to, from) {
+                if (to.query && to.query.tab) {
+                    this.searchKey.tab = to.query.tab;
+                    this.anchors = [];
+                }
+                if (to.query.tab === 'focus') {
+                    this.anchors = anchorsFocusData.message.anchors;
+                } else {
+                    this.anchors = anchorsData.message.anchors;
+                }
             }
         },
         components: { navbar, headerLogo }
-    }
+    };
 </script>
 
 <style lang="less">

@@ -7,9 +7,9 @@
 </template>
 
 <script>
-    require('./index.less')
+    require('./index.less');
 
     export default {
         name: 'header'
-    }
+    };
 </script>

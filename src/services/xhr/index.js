@@ -1,6 +1,6 @@
 // 引入第三方 Ajax 请求库要将其添加到 build/webpack.base.conf.js 的 entry.vendor 分离打包
 
-var xhr = require('./http').default
+var xhr = require('./http').default;
 
 /**
  * XHR 请求接口定义
@@ -11,4 +11,4 @@ var xhr = require('./http').default
  *
  * API 封装格式为 { success: <Boolean>, errMsg: <String>, data: <Any> }
  */
-export default xhr
+export default xhr;
