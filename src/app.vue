@@ -27,10 +27,10 @@
 <script>
     require('./assets/less/index.less')
 
-    import headerLogo from 'src/components/header';
+    import headerLogo from 'src/components/header'
     import navbar from 'src/components/tab'
     import anchorsData from '../mock/anchors'
-    import topicsService from 'src/services/topicsService'
+    import anchorsService from 'src/services/anchorsService'
 
     export default {
         name: 'index',
@@ -46,11 +46,11 @@
         methods: {
             getTopics () {
                 setTimeout(() => {
-                    // topicsService.getList().then((response) => {
+                    anchorsService.getList().then((response) => {
 
-                    // }, (response) => {
+                    }, (response) => {
 
-                    // })
+                    })
                     this.anchors = anchorsData.message.anchors
                 }, 2000)
             }
@@ -77,7 +77,7 @@
             border-bottom: 1px solid #f3f3f3;
             a {
                 color: initial;
-            }        
+            }
             .content {
                 text-align: left;
             }

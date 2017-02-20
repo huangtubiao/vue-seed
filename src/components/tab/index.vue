@@ -15,7 +15,7 @@
 
     export default {
         name: 'navbar',
-        data() {
+        data () {
             return {
                 isActive: true,
                 tabs: [{
@@ -30,16 +30,15 @@
             }
         },
         methods: {
-            switchTab: function(e) {
-                let hightLightIndex = parseInt(e.target.dataset.tab);
-                this.tabs.map(function(tab, index) {
+            switchTab: function (e) {
+                let hightLightIndex = parseInt(e.target.dataset.tab)
+                this.tabs.map(function (tab, index) {
                     if (index === hightLightIndex) {
-                        tab.isActive = true;
+                        tab.isActive = true
                     } else {
-                        tab.isActive = false;
+                        tab.isActive = false
                     }
                 })
-                
             }
         }
     }

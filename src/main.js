@@ -8,10 +8,10 @@ import router from 'routers'
 import store from './store'
 
 VuexRouterSync.sync(store, router)
-Vue.use(VueResource);
+Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({
     router,
     store
-}).$mount('#app');
+}).$mount('#app')
