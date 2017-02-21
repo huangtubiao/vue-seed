@@ -11,7 +11,6 @@
 - ES6 + Babel
 - Sass/Less
 - Eslint
-- Koa
 
 ## Dependences
 
@@ -24,7 +23,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:9001
 npm run dev
 
 # build for production with minification
@@ -33,3 +32,5 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+> 在dev环境下，需要启动mock server来加载数据，进入"./mock"目录，按照README的命令步骤来启动服务。

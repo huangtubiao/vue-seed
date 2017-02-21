@@ -1,6 +1,6 @@
 "use strict";
 
-// var data = require('../model/model');
+var anchorsData = require('../model/anchorsModel');
 var requestSync = require('../common/requestSync');
 var htmlparser = require("htmlparser");
 var htmlToText = require('html-to-text');
@@ -14,6 +14,14 @@ exports.index = function*() {
         content: 'qianfan anchors'
     });
 };
+
+// mock data
+// exports.list = function*() {
+//     this.body = {
+//         retcode: 0,
+//         data: anchorsData().list
+//     };
+// };
 
 exports.list = function*() {
     let query = this.request.query,

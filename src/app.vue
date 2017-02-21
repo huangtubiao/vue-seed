@@ -1,6 +1,6 @@
 <template>
     <div>
-        <headerLogo></headerLogo>
+        <header-logo></header-logo>
         <navbar></navbar>
         <section id="page">
             <!-- 首页列表 -->
@@ -37,6 +37,9 @@
             return {
                 anchors: [],
                 searchKey: {
+                    index: 0,
+                    size: 12,
+                    type: 0,
                     tab: 'all'
                 }
             };
@@ -49,7 +52,7 @@
         },
         methods: {
             getTopics () {
-                anchorsService.getList().then((response) => {
+                anchorsService.getList(this.searchKey).then((response) => {
                     this.anchors = response.body.message.anchors;
                 });
             }

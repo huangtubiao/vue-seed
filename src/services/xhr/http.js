@@ -23,7 +23,14 @@ var xhr = ({ method = 'get', url, options = null }) => {
             });
             return promise;
         default:
-            return Vue.http.get(url, [options]);
+            promise = new Promise(function (resolve, reject) {
+                Vue.http.jsonp(url, options).then(function (response) {
+                    resolve(response);
+                }, function (response) {
+                    errHandler(response);
+                });
+            });
+            return promise;
     }
 };
 

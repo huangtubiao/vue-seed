@@ -8,10 +8,10 @@ class AnchorsService {
      * 获取主播列表
      * @return {Promise}
      */
-    getList () {
+    getList (params) {
         return xhr({
             method: 'get',
-            url: '/api/home/v4/moreAnchor.h5?index=0&size=12&type=0',
+            url: '/api/home/v4/moreAnchor.h5?' + 'index=' + params.index + '&size=' + params.size + '&type=' + params.type,
             options: {
                 callback: 'jsonp_callback_qf56commoreAnchor'
             }

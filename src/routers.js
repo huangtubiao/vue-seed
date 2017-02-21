@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
+// 路由注册
 const router = new VueRouter({
     mode: 'history',
     routes: [{
@@ -20,7 +21,7 @@ const router = new VueRouter({
     }, {
         path: '/activity',
         name: 'activity',
-        component: resolve => require(['components/layout/activity.vue'], resolve),
+        component: resolve => require(['components/frame/activity.vue'], resolve),
         children: [{
             path: 'valentine',
             name: 'activity.valentine',

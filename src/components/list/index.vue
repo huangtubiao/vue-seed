@@ -26,21 +26,9 @@
         },
         mounted () {
             console.log('render list')
-            // 滚动加载
-            $(window).on('scroll', utils.throttle(this.getScrollData, 300, 1000));
         },
         methods: {
-            // 滚动加载数据
-            getScrollData() {
-                if (this.scroll) {
-                    let totalheight = parseInt($(window).height(), 20) + parseInt($(window).scrollTop(), 20);
-                    if ($(document).height() <= totalheight + 200) {
-                        // this.scroll = false;
-                        // this.searchKey.page += 1;
-                        // this.getTopics();
-                    }
-                }
-            }
+
         }
     }
 </script>
