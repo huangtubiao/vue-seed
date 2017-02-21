@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import utils from 'src/common/utils';
+    import utils from 'src/common/utils/utils';
 
     export default {
         name: 'list',

@@ -18,6 +18,9 @@
                             </div>
                         </div>
                     </router-link>
+                    <div class="edit-wrap" v-if="searchKey.tab === 'focus'">
+                        <a class="btn-remove" href="javascript:;">删除</a>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -48,11 +51,16 @@
             if (this.$route.query && this.$route.query.tab) {
                 this.searchKey.tab = this.$route.query.tab;
             }
-            this.getTopics();
+            this.getAllAnchors();
         },
         methods: {
-            getTopics () {
-                anchorsService.getList(this.searchKey).then((response) => {
+            getAllAnchors () {
+                anchorsService.getAllAnchors(this.searchKey).then((response) => {
+                    this.anchors = response.body.message.anchors;
+                });
+            },
+            getFocusAnchors () {
+                anchorsService.getFocusAnchors(this.searchKey).then((response) => {
                     this.anchors = response.body.message.anchors;
                 });
             }
@@ -65,9 +73,11 @@
                     this.anchors = [];
                 }
                 if (to.query.tab === 'focus') {
-                    alert('我的关注');
+                    this.searchKey.type = 1;
+                    this.getFocusAnchors();
                 } else {
-                    this.getTopics();
+                    this.searchKey.type = 0;
+                    this.getAllAnchors();
                 }
             }
         },
@@ -91,7 +101,9 @@
         li {
             padding: 10px 15px;
             border-bottom: 1px solid #f3f3f3;
+            text-align: left;
             a {
+                display: inline-block;
                 color: initial;
             }
             .content {
@@ -118,6 +130,16 @@
                 color: #cb9c64;
                 border: 1px solid #cb9c64;
                 border-radius: 2px;
+            }
+            .edit-wrap {
+                display: inline-block;
+                float: right;
+                line-height: 50px;
+            }
+            .btn-remove {
+                padding: 5px;
+                background-color: #ddd;
+                border-radius: 4px;
             }
         }
 
