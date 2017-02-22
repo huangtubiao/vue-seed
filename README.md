@@ -9,7 +9,7 @@
 - Vuex
 - webpack2
 - ES6 + Babel
-- Sass/Less
+- Less
 - Eslint
 
 ## Dependences
