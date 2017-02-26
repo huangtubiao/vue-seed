@@ -1,8 +1,8 @@
 import xhr from './xhr';
-import cgiPath from '../constants/cgiPath';
+import cgiPath from './cgi_path/anchors';
 
 /**
- * 首页主播列表所用到的 API
+ * 首页主播列表所用到的service
  */
 class AnchorsService {
     /**

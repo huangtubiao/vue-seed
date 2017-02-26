@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { errHandler } from './config';
+import { errHandler } from './errHandler';
 
 var xhr = ({ method = 'get', url, options = null }) => {
     var promise;
