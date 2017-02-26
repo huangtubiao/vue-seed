@@ -7,9 +7,11 @@
 </template>
 
 <script>
-    require('./index.less');
-
     export default {
         name: 'header'
     };
 </script>
+
+<style lang="less">
+    @import './index.less';
+</style>

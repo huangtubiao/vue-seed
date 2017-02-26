@@ -1,28 +1,24 @@
 .navbar {
-    position: relative;
-    line-height: 45px;
-    background-color: #fff;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        display:none
+    }
     a {
-        font-size: 17px;
+        display: inline-block;
+        margin: 0.5rem 0.4rem;
+        font-size: 14px;
         color: initial;
     }
-    &:after {
-        border-bottom: 1px solid #dbdbdb;
-    }
     .title-list {
-        display: table;
-        width: 100%;
-        table-layout: fixed;
+        white-space: nowrap;
     }
     .title-list li {
         display: table-cell;
         box-sizing: border-box;
-        font-size: 16px;
         text-align: center;
         color: #777;
-        &.active {
-            border-bottom: 2px solid #cb9c64;
-        }
     }
     .title-list li.active a {
         color: #cb9c64;

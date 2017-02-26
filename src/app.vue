@@ -28,8 +28,6 @@
 </template>
 
 <script>
-    require('./assets/less/index.less');
-
     import headerLogo from 'src/components/header';
     import navbar from 'src/components/tab';
     import anchorsService from 'src/services/anchorsService';
@@ -86,6 +84,8 @@
 </script>
 
 <style lang="less">
+    @import './assets/less/index.less';
+
     #app {
         color: #2c3e50;
         background-color:#fff;

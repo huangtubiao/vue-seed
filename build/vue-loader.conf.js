@@ -12,6 +12,8 @@ module.exports = {
     postcss: [
         require('autoprefixer')({
             browsers: ['last 2 versions']
-        })
+        }),
+        // 配置px转rem
+        require('postcss-px2rem')({remUnit: 34.5})
     ]
 }

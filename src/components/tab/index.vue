@@ -11,8 +11,6 @@
 </template>
 
 <script>
-    require('./index.less');
-
     export default {
         name: 'navbar',
         data () {
@@ -23,7 +21,35 @@
                     isActive: true
                 }, {
                     label: 'focus',
-                    text: '我的关注',
+                    text: '高颜值',
+                    isActive: false
+                }, {
+                    label: 'focus',
+                    text: '萌妹子',
+                    isActive: false
+                }, {
+                    label: 'focus',
+                    text: '好声音',
+                    isActive: false
+                }, {
+                    label: 'focus',
+                    text: '有才艺',
+                    isActive: false
+                }, {
+                    label: 'focus',
+                    text: '小鲜肉',
+                    isActive: false
+                }, {
+                    label: 'focus',
+                    text: '逗B/MC',
+                    isActive: false
+                }, {
+                    label: 'focus',
+                    text: '劲爆',
+                    isActive: false
+                }, {
+                    label: 'focus',
+                    text: '还有更多',
                     isActive: false
                 }]
             };
@@ -44,3 +70,7 @@
         }
     };
 </script>
+
+<style lang="less">
+    @import './index.less';
+</style>

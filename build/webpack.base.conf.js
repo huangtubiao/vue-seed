@@ -10,7 +10,8 @@ function resolve(dir) {
 
 module.exports = {
     entry: {
-        app: './src/main.js'
+        app: './src/main.js',
+        vendors: './src/common/libs/flexible.js'
     },
     output: {
         // 编译输出的根路径
@@ -32,6 +33,7 @@ module.exports = {
         // 默认路径代理，例如 import Vue from 'vue'，会自动到 'vue/dist/vue.common.js'中寻找
         alias: {
             'vue$': 'vue/dist/vue.common.js',
+            // 'flexible': resolve('src/common/lib/flexible.min.js'),
             'src': resolve('src'),
             'assets': resolve('src/assets'),
             'components': resolve('src/components')
