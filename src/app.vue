@@ -7,20 +7,8 @@
             <ul class="anchors-list">
                 <li v-for="item in anchors" :key="item.uid">
                     <router-link :to="{ name: 'room', params: { id: item.roomid } }">
-                        <div class="content">
-                            <img class="avatar inline-block" :src="item.pic51">
-                            <div class="info">
-                                <div class="info-name" v-text="item.name"></div>
-                                <div class="info-focus">
-                                    观众数：<span v-text="item.focus"></span>
-                                    <span class="info-live" v-if="item.live === 1">直播</span>
-                                </div>
-                            </div>
-                        </div>
+                        <img class="avatar inline-block" :src="item.pic51">
                     </router-link>
-                    <div class="edit-wrap" v-if="searchKey.tab === 'focus'">
-                        <a class="btn-remove" href="javascript:;">删除</a>
-                    </div>
                 </li>
             </ul>
         </section>
@@ -87,58 +75,20 @@
     @import './assets/less/index.less';
 
     #app {
-        color: #2c3e50;
         background-color:#fff;
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
         text-align: center;
         transition: all .3s ease;
-        overflow-x:hidden;
     }
 
     .anchors-list {
+        display: flex;
+        flex-wrap: wrap;
         li {
-            padding: 10px 15px;
-            border-bottom: 1px solid #f3f3f3;
+            padding: 5px 5px;
             text-align: left;
-            a {
-                display: inline-block;
-                color: initial;
-            }
-            .content {
-                text-align: left;
-            }
+            width: 50%;
             .avatar {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                margin-right: 10px;
-                border: 1px solid #f3f3f3;
-                vertical-align: middle;
-            }
-            .info {
-                display: inline-block;
-                vertical-align: middle;
-            }
-            .info-name {
-                margin-bottom: 10px;
-            }
-            .info-live {
-                margin-left: 8px;
-                color: #cb9c64;
-                border: 1px solid #cb9c64;
-                border-radius: 2px;
-            }
-            .edit-wrap {
-                display: inline-block;
-                float: right;
-                line-height: 50px;
-            }
-            .btn-remove {
-                padding: 5px;
-                background-color: #ddd;
+                width: 100%;
                 border-radius: 4px;
             }
         }
