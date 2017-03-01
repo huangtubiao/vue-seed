@@ -34,9 +34,6 @@
             };
         },
         mounted () {
-            if (this.$route.query && this.$route.query.tab) {
-                this.searchKey.tab = this.$route.query.tab;
-            }
             this.getAllAnchors();
         },
         methods: {
@@ -54,17 +51,11 @@
         watch: {
             // 切换路由触发
             '$route' (to, from) {
-                if (to.query && to.query.tab) {
-                    this.searchKey.tab = to.query.tab;
+                if (to.query && to.query.type) {
+                    this.searchKey.type = to.query.type;
                     this.anchors = [];
                 }
-                if (to.query.tab === 'focus') {
-                    this.searchKey.type = 1;
-                    this.getFocusAnchors();
-                } else {
-                    this.searchKey.type = 0;
-                    this.getAllAnchors();
-                }
+                this.getAllAnchors();
             }
         },
         components: { navbar, headerLogo }
