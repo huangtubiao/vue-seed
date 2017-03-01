@@ -18,3 +18,4 @@
 但两者都是 webkit 内核，所以不需要兼容非 webkit 内核的浏览器。
 
 [QQ浏览器X5内核问题汇总](http://www.qianduan.net/qqliu-lan-qi-x5nei-he-wen-ti-hui-zong/)
+[video播放器那些事](https://github.com/huangtubiao/livestream/blob/master/video/README.md)

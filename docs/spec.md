@@ -15,3 +15,4 @@
 
 ## Sass编写规范以及目录结构
 
+- [Sass 规范](https://github.com/huangtubiao/sass-guidelines)
