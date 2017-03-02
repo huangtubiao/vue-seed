@@ -2,7 +2,7 @@
     <div>
         <header-logo></header-logo>
         <navbar></navbar>
-        <section id="page">
+        <section id="page" v-scroll="loadMore">
             <!-- 首页列表 -->
             <ul class="anchors-list">
                 <li v-for="item in anchors" :key="item.uid">
@@ -46,6 +46,9 @@
                 anchorsService.getFocusAnchors(this.searchKey).then((response) => {
                     this.anchors = response.body.message.anchors;
                 });
+            },
+            loadMore () {
+                alert('加载更多数据');
             }
         },
         watch: {
