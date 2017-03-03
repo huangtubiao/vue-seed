@@ -2,7 +2,7 @@
     <div>
         <header-logo></header-logo>
         <navbar></navbar>
-        <section id="page" v-scroll="loadMore">
+        <section id="page" v-scroll="loadMoreData">
             <!-- 首页列表 -->
             <ul class="anchors-list">
                 <li v-for="item in anchors" :key="item.uid">
@@ -16,9 +16,9 @@
 </template>
 
 <script>
-    import headerLogo from 'src/components/header';
-    import navbar from 'src/components/tab';
-    import anchorsService from 'src/services/anchorsService';
+    import headerLogo from 'components/header';
+    import navbar from 'components/tab';
+    import anchorsService from 'services/anchorsService';
 
     export default {
         name: 'index',
@@ -29,26 +29,27 @@
                     index: 0,
                     size: 12,
                     type: 0,
-                    tab: 'all'
+                    page: 1
                 }
             };
         },
         mounted () {
-            this.getAllAnchors();
+            this.getAnchors();
         },
         methods: {
-            getAllAnchors () {
-                anchorsService.getAllAnchors(this.searchKey).then((response) => {
-                    this.anchors = response.body.message.anchors;
+            getAnchors () {
+                anchorsService.getAnchors(this.searchKey).then((response) => {
+                    if (this.anchors.length === 0) {
+                        this.anchors = response.body.message.anchors;
+                    } else {
+                        var newAnchors = response.body.message.anchors;
+                        this.anchors = [...this.anchors, ...newAnchors];
+                    }
                 });
             },
-            getFocusAnchors () {
-                anchorsService.getFocusAnchors(this.searchKey).then((response) => {
-                    this.anchors = response.body.message.anchors;
-                });
-            },
-            loadMore () {
-                alert('加载更多数据');
+            loadMoreData () {
+                this.searchKey.page = this.searchKey.page + 1;
+                this.getAnchors();
             }
         },
         watch: {
@@ -58,7 +59,7 @@
                     this.searchKey.type = to.query.type;
                     this.anchors = [];
                 }
-                this.getAllAnchors();
+                this.getAnchors();
             }
         },
         components: { navbar, headerLogo }

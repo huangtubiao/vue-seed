@@ -58,7 +58,7 @@
             switchTab: function (e) {
                 let hightLightIndex = parseInt(e.target.dataset.index);
                 let type = e.target.dataset.type;
-                
+
                 this.tabs.map(function (tab, index) {
                     if (index === hightLightIndex) {
                         tab.isActive = true;

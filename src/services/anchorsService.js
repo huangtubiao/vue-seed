@@ -9,10 +9,11 @@ class AnchorsService {
      * 获取全部主播列表
      * @return {Promise}
      */
-    getAllAnchors (params) {
+    getAnchors (params) {
         return xhr({
             method: 'get',
-            url: cgiPath['GET_ANCHORS'] + '?index=' + params.index + '&size=' + params.size + '&type=' + params.type,
+            url: cgiPath['GET_ANCHORS'] + '?index=' + params.index + '&size=' +
+            params.size + '&type=' + params.type + '&page=' + params.page,
             options: {
                 callback: 'jsonp_callback_qf56commoreAnchor'
             }
