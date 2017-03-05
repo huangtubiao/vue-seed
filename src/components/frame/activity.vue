@@ -1,8 +1,6 @@
 <!-- 专题页模板 -->
 <template>
     <main class="component-main">
-        <transition name="router" mode="out-in">
-            <router-view class="view router-view"></router-view>
-        </transition>
+        <router-view class="view router-view"></router-view>
     </main>
 </template>

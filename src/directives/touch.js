@@ -1,5 +1,5 @@
 /**
- * touch点击指令
+ * touch
  */
 import Vue from 'vue';
 

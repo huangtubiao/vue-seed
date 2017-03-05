@@ -9,11 +9,11 @@ const router = new VueRouter({
     routes: [{
         path: '/',
         name: 'home',
-        component: resolve => require(['src/app.vue'], resolve)
+        component: resolve => require(['views/home/index.vue'], resolve)
     }, {
         path: '/list',
         name: 'list',
-        component: resolve => require(['src/app.vue'], resolve)
+        component: resolve => require(['views/home/index.vue'], resolve)
     }, {
         path: '/room/:id',
         name: 'room',

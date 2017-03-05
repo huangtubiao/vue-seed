@@ -8,6 +8,7 @@ import VueResource from 'vue-resource';
 import router from 'routers';
 import store from 'store';
 import directives from 'directives';
+import App from './app.vue';
 
 VuexRouterSync.sync(store, router);
 Vue.use(VueResource);
@@ -15,5 +16,6 @@ Vue.use(VueResource);
 new Vue({
     router,
     store,
-    directives
+    directives,
+    ...App
 }).$mount('#app');

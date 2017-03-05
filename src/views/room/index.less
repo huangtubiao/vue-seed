@@ -1,0 +1,66 @@
+@import '../../assets/less/var.less';
+@import '../../assets/less/mixins.less';
+
+.play_wrap {
+    position: relative;
+    background-color: rgba(0,0,0,.95);
+}
+
+.play_bg {
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    background: center center no-repeat;
+    background-size: 120%;
+    z-index: 1;
+    .bg_shadow {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.95);
+    }
+}
+
+// 播放页头部组件
+.play_info {
+    padding: 10px 15px;
+    color: #fff;
+    img {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+    .info_anchor {
+        position: relative;
+        top: 6px;
+        margin: 0px 5px;
+        display: inline-block;
+        text-align: left;
+    }
+    .info_online {
+        padding: 7px 10px;
+        display: inline-block;
+        background-color: rgba(64,64,64,.7);
+        border-radius: 3px;
+    }
+    .btn_open_app {
+        position: relative;
+        top: 7px;
+        display: inline-block;
+        float: right;
+        .btn (@sys-color);
+    }
+}
+
+// 播放器组件
+.play_video {
+    height: 250px;
+}
+
+// 大家都在看组件
+
+// 打开App组件

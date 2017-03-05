@@ -3,8 +3,10 @@
  */
 import scroll from './scroll';
 import touch from './touch';
+import title from './title';
 
 export default {
     ...scroll,
-    ...touch
+    ...touch,
+    ...title
 };
