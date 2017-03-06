@@ -4,7 +4,7 @@
         <navbar></navbar>
         <section id="page" v-scroll="loadMoreData">
             <!-- 首页列表 -->
-            <ul class="anchors_list">
+            <ul class="anchors_list clearfix">
                 <li v-for="item in anchors" :key="item.uid">
                     <router-link :to="{ name: 'room', params: { id: item.roomid } }">
                         <img class="avatar inline-block" :src="item.pic51">
@@ -67,24 +67,5 @@
 </script>
 
 <style lang="less">
-    #app {
-        background-color:#fff;
-        text-align: center;
-        transition: all .3s ease;
-    }
-
-    .anchors_list {
-        display: flex;
-        flex-wrap: wrap;
-        li {
-            padding: 5px 5px;
-            text-align: left;
-            width: 50%;
-            .avatar {
-                width: 100%;
-                border-radius: 4px;
-            }
-        }
-
-    }
+    @import './index.less';
 </style>
