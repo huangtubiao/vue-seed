@@ -52,15 +52,121 @@
         top: 7px;
         display: inline-block;
         float: right;
-        .btn (@sys-color);
     }
 }
 
 // 播放器组件
 .play_video {
+    position: relative;
     height: 250px;
+    .video_wrap {
+        display: none;
+    }
+    .video_rest {
+        display: none;
+    }
+    .video_play {
+        width: 100%;
+        height: 100%;
+        background-image: url("https://file.qf.56.com/p/group2/M02/8D/41/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0ODczOTk0MzU2NzM=/cut@m=crop,x=0,y=80,w=1196,h=911_cut@m=resize,w=210,h=160.png");
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            background-image: url('');
+            background-size: 100% 100%;
+            background-color: #fff;
+            opacity: 0.4;
+            border-radius: 50%;
+        }
+    }
+    .video_loading {
+        display: none;
+    }
+}
+
+// 聊天区组件
+.play_chat {
+    height: 270px;
+    overflow-y: auto;
+}
+
+// 交互组件
+.play_control {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    button {
+        color: #fff;
+    }
 }
 
 // 大家都在看组件
+.recommend {
+    .recommend_title {
+        padding: 0px 15px;
+        height: 50px;
+        line-height: 50px;
+        .btn_flash {
+            float: right;
+            padding: 0;
+            color: $sys-color;
+            line-height: 50px;
+            border: 0;
+            background-color: transparent;
+        }
+    }
+    .recomend_content {
+        width: 9.2rem;
+        height: 11.4rem;
+        margin: 0 auto;
+        overflow: hidden;
+        a {
+            position: relative;
+            width: 4.467rem;
+            margin-bottom: .267rem;
+            border-radius: .08rem;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            overflow: hidden;
+            &:nth-child(1) {
+                float: left;
+                height: 6.4rem;
+                background-image: url(https://file.qf.56.com/p//group3/M11/0B/38/MTAuMTAuODguODM=/dXBsb2FkRmlsZV8xXzE0ODc1Mjc1NzMwMDE=/cut@m=crop,x=0,y=0,w=510,h=740_cut@m=resize,w=510,h=740.png);
+            }
+            &:nth-child(2) {
+                float: right;
+                height: 4.467rem;
+                background-image: url(https://file.qf.56.com/p/group2/M10/E0/C1/MTAuMTAuODguODE=/dXBsb2FkRmlsZV8xXzE0NzkyODYzODI4MTg=/cut@m=crop,x=16,y=0,w=2326,h=2326_cut@m=resize,w=510,h=510.jpg);
+            }
+            &:nth-child(3) {
+                float: right;
+                height: 6.4rem;
+                background-image: url(https://file.qf.56.com/p/group3/M10/0B/AF/MTAuMTAuODguODQ=/dXBsb2FkRmlsZV8xXzE0ODg3MjQyNDQ1NjY=/cut@m=crop,x=148,y=33,w=722,h=1047_cut@m=resize,w=510,h=740.jpg);
+            }
+            &:nth-child(4) {
+                float: left;
+                height: 4.467rem;
+                background-image: url(https://file.qf.56.com/p//group2/M04/8D/D6/MTAuMTAuODguODI=/dXBsb2FkRmlsZV8xXzE0ODg3Njg2MTc3NDQ=/cut@m=crop,x=0,y=0,w=510,h=510_cut@m=resize,w=510,h=510.png);
+            }
+        }
+    }
+}
 
 // 打开App组件
+.open_app {
+    padding: 5px 14px 15px 14px;
+    button {
+        width: 100%;
+        height: 38px;
+        border-radius: 4px;
+    }
+}
