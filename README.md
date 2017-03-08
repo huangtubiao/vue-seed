@@ -20,13 +20,13 @@
 ## Build Setup
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:9001
+# 启动服务，打开链接 localhost:9001
 npm run dev
 
-# build for production with minification
+# 发布代码
 npm run build
 
 # build for production and view the bundle analyzer report
