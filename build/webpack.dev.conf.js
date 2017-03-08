@@ -7,6 +7,7 @@ var baseWebpackConfig = require('./webpack.base.conf')
 // 使用 html-webpack-plugin 插件，这个插件可以帮我们自动生成 html 并且注入到 .html 文件中
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+var ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 // add hot-reload related code to entry chunks
 // 将 Hol-reload 相对路径添加到 webpack.base.conf 的 对应 entry 前
@@ -38,6 +39,7 @@ module.exports = merge(baseWebpackConfig, {
             template: 'index.html',
             inject: true
         }),
-        new FriendlyErrorsPlugin()
+        new FriendlyErrorsPlugin(),
+        new ProgressBarPlugin()
     ]
 })
