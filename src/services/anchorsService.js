@@ -15,20 +15,20 @@ class AnchorsService {
             url: cgiPath['GET_ANCHORS'] + '?index=' + params.index + '&size=' +
             params.size + '&type=' + params.type + '&page=' + params.page,
             options: {
-                callback: 'jsonp_callback_qf56commoreAnchor'
+                callback: 'jsonp_callback_qf56Anchors'
             }
         });
     }
     /**
-     * 获取关注主播列表
+     * 获取推荐主播列表
      * @return {Promise}
      */
-    getFocusAnchors (params) {
+    getRecommendAnchors (params) {
         return xhr({
             method: 'get',
-            url: cgiPath['GET_ANCHORS'] + '?index=' + params.index + '&size=' + params.size + '&type=' + params.type,
+            url: cgiPath['GET_RECOMMEND_ANCHORS'] + '?size=' + params.size,
             options: {
-                callback: 'jsonp_callback_qf56commoreAnchor'
+                callback: 'jsonp_callback_qf56recommendAnchors'
             }
         });
     }

@@ -1,0 +1,48 @@
+@import '../../assets/less/var.less';
+
+.recommend {
+    .header {
+        padding: 0px 15px;
+        height: 50px;
+        line-height: 50px;
+        .flash_anchors {
+            float: right;
+            padding: 0;
+            color: @sys-color;
+            line-height: 50px;
+            border: 0;
+            background-color: transparent;
+        }
+    }
+    .content {
+        width: 9.2rem;
+        height: 11.4rem;
+        margin: 0 auto;
+        overflow: hidden;
+        a {
+            position: relative;
+            width: 4.467rem;
+            margin-bottom: .267rem;
+            border-radius: .08rem;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            overflow: hidden;
+            &:nth-child(1) {
+                float: left;
+                height: 6.4rem;
+            }
+            &:nth-child(2) {
+                float: right;
+                height: 4.467rem;
+            }
+            &:nth-child(3) {
+                float: right;
+                height: 6.4rem;
+            }
+            &:nth-child(4) {
+                float: left;
+                height: 4.467rem;
+            }
+        }
+    }
+}

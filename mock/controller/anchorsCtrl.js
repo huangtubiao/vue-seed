@@ -39,3 +39,19 @@ exports.list = function*() {
 
     this.body = res.body;
 };
+
+exports.recommendAnchors = function*() {
+    let query = this.request.query,
+        urlParam = '?size=' + query.size + '&callback=' + query.callback;
+
+
+    var res = yield requestSync.ajax({
+        uri: CGI_PATH['GET_RECOMMEND_ANCHORS'] + urlParam,
+        method: 'GET'
+    });
+
+    this.set('Access-Control-Allow-Origin', 'http://localhost:9001');
+    this.set('Access-Control-Allow-Credentials', true);
+
+    this.body = res.body;
+};
