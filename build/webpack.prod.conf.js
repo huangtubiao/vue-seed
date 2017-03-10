@@ -2,17 +2,12 @@ var path = require('path')
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
-// 加载 webpack 配置合并工具
 var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
-// 一个可以插入 html 并且创建新的 .html 文件的插件
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-// 一个 webpack 扩展，可以提取一些代码并且将它们和文件分离开
-// 如果我们想将 webpack 打包成一个文件 css js 分离开，那我们需要这个插件
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var env = config.build.env
 
-// 合并 webpack.base.conf.js
 var webpackConfig = merge(baseWebpackConfig, {
     module: {
         rules: utils.styleLoaders({
@@ -37,34 +32,14 @@ var webpackConfig = merge(baseWebpackConfig, {
         new webpack.DefinePlugin({
             'process.env': env
         }),
-        // 压缩 js (同样可以压缩 css)
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             },
             sourceMap: true
         }),
-        // 将 css 文件分离出来
         new ExtractTextPlugin({
             filename: utils.assetsPath('css/[name].[contenthash].css')
-        }),
-        // generate dist index.html with correct asset hash for caching.
-        // you can customize output by editing /index.html
-        // see https://github.com/ampedandwired/html-webpack-plugin
-        // 输入输出的 .html 文件
-        new HtmlWebpackPlugin({
-            filename: config.build.index,
-            template: 'index.html',
-            inject: true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true
-                    // more options:
-                    // https://github.com/kangax/html-minifier#options-quick-reference
-            },
-            // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-            chunksSortMode: 'dependency'
         }),
         // split vendor js into its own file
         new webpack.optimize.CommonsChunkPlugin({
@@ -111,6 +86,27 @@ if (config.build.productionGzip) {
 if (config.build.bundleAnalyzerReport) {
     var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
     webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+}
+
+var pages = utils.getEntry('./src/views/**/*.html');
+for (var pathname in pages) {
+    // 配置生成的html文件，定义路径等
+    var conf = {
+        filename: pathname + '.html',
+        template: pages[pathname], // 模板路径
+        inject: true,              // js插入位置
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+            // more options:
+            // https://github.com/kangax/html-minifier#options-quick-reference
+        },
+        // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+        chunksSortMode: 'dependency'
+    };
+    // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
+    webpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
 }
 
 module.exports = webpackConfig

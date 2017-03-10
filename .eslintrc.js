@@ -31,6 +31,7 @@ module.exports = {
         "indent": [2, 4, { "SwitchCase": 1 }],
         "semi": ["error", "always"],
         "no-trailing-spaces": 0,
+        "no-new": 0
     }
 }
 

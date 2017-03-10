@@ -1,4 +1,4 @@
-# qianfan-app
+# vue-seed
 
 > A Vue.js project
 

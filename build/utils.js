@@ -1,4 +1,5 @@
 var path = require('path')
+var glob = require('glob')
 var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -61,4 +62,18 @@ exports.styleLoaders = function(options) {
         })
     }
     return output
+}
+
+// 获取入口问价
+exports.getEntry = function(globPath) {
+    var entries = {},
+        basename, tmp, pathname;
+
+    glob.sync(globPath).forEach(function (entry) {
+        basename = path.basename(entry, path.extname(entry));
+        tmp = entry.split('/').splice(-3);
+        pathname = tmp.splice(1, 1).toString().toLowerCase(); // 正确输出js和html的路径
+        entries[pathname] = entry;
+    });
+    return entries;
 }
