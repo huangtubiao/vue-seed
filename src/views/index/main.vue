@@ -17,7 +17,7 @@
 
 <script>
     import headerLogo from 'components/header';
-    import navbar from 'components/tab';
+    import navbar from 'components/nav';
     import anchorsService from 'services/anchorsService';
 
     export default {

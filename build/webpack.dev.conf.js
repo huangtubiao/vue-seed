@@ -24,8 +24,7 @@ module.exports = merge(baseWebpackConfig, {
         new webpack.DefinePlugin({
             'process.env': config.dev.env
         }),
-        // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
-         // HotModule 插件在页面进行变更的时候只会重回对应的页面模块，不会重绘整个 html 文件
+        // HotModule 插件在页面进行变更的时候只会重回对应的页面模块，不会重绘整个 html 文件
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new FriendlyErrorsPlugin()
@@ -33,10 +32,8 @@ module.exports = merge(baseWebpackConfig, {
 })
 
 var pages = utils.getEntry('./src/views/**/*.html');
-console.dir(pages)
 for (var pathname in pages) {
     // 配置生成的html文件，定义路径等
-    console.dir(pathname)
     var conf = {
         filename: pathname + '.html',
         template: pages[pathname], // 模板路径

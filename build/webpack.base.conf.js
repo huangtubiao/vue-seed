@@ -9,18 +9,11 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 
-console.dir(entries)
 module.exports = {
     entry: Object.assign(entries, {
         vendors : ['flexible']
     }),
-    // entry: {
-    //     app: './src/main.js',
-    //     vendors: './src/common/libs/flexible.js'
-    // },
     output: {
-        // path: path.resolve(__dirname, 'Public'), // html, css, js 图片等资源文件的输出路径，将所有资源文件放在 Public 目录
-        // publicPath: '/Public/', // html, css, js 图片等资源文件的 server 上的路径
         // 编译输出的根路径
         path: config.build.assetsRoot,
         // 编译输出的文件名

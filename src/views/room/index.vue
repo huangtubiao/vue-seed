@@ -8,9 +8,9 @@
             <play></play>
             <chat></chat>
             <section class="interact_btns">
-                <button class="talk">聊天</button>
-                <button class="send_gift">送礼</button>
-                <button class="send_star">星星</button>
+                <a href="#" class="talk">聊天</a>
+                <a href="#" class="send_gift">送礼</a>
+                <a href="#" class="send_star">星星</a>
             </section>
             <div class="play_tip"></div>
         </div>
@@ -24,10 +24,10 @@
 </template>
 
 <script>
-    import roomHeader from 'components/room_header';
     import play from 'components/play';
     import chat from 'components/chat';
     import recommend from 'components/recommend';
+    import roomHeader from './components/room_header';
 
     export default {
         name: 'room',
