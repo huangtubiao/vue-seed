@@ -16,29 +16,29 @@ exports.index = function*() {
 };
 
 // mock data
-// exports.list = function*() {
-//     this.body = {
-//         retcode: 0,
-//         data: anchorsData().list
-//     };
-// };
-
 exports.list = function*() {
-    let query = this.request.query,
-        urlParam = '?index=' + query.index + '&size=' + query.size +
-        '&type=' + query.type + '&callback=' + query.callback;
-
-
-    var res = yield requestSync.ajax({
-        uri: CGI_PATH['GET_ANCHORS'] + urlParam,
-        method: 'GET'
-    });
-
-    this.set('Access-Control-Allow-Origin', 'http://localhost:9001');
-    this.set('Access-Control-Allow-Credentials', true);
-
-    this.body = res.body;
+    this.body = {
+        retcode: 0,
+        data: anchorsData().list
+    };
 };
+
+// exports.list = function*() {
+//     let query = this.request.query,
+//         urlParam = '?index=' + query.index + '&size=' + query.size +
+//         '&type=' + query.type + '&callback=' + query.callback;
+
+
+//     var res = yield requestSync.ajax({
+//         uri: CGI_PATH['GET_ANCHORS'] + urlParam,
+//         method: 'GET'
+//     });
+
+//     this.set('Access-Control-Allow-Origin', 'http://localhost:9001');
+//     this.set('Access-Control-Allow-Credentials', true);
+
+//     this.body = res.body;
+// };
 
 exports.recommendAnchors = function*() {
     let query = this.request.query,

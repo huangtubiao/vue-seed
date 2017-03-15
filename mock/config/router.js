@@ -5,7 +5,7 @@ const view = require('../controller/anchorsCtrl');
 var API = new router();
 
 API.get('/api/', view.index)
-   .get('/api/home/v4/moreAnchor.h5/', view.list)
-   .get('/api/home/v4/random.h5/', view.recommendAnchors)
+   .get('/home/v4/moreAnchor.h5/', view.list)
+   .get('/home/v4/random.h5/', view.recommendAnchors)
 
 exports.RULE  = API.middleware();

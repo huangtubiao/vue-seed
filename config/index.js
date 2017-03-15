@@ -43,10 +43,13 @@ module.exports = {
         assetsPublicPath: '/',
         // 需要 proxyTable 代理的接口（可跨域）
         proxyTable: {
-            '/api/': {
-                target: 'http://localhost:3001',
-                crossOrigin: true,
-                logLevel: 'debug'
+            '/api': {
+                target: 'http://qf.56.com',
+                changeOrigin: true,
+                logLevel: 'debug',
+                pathRewrite: {
+                    '^/api': ''
+                }
             }
         },
         // CSS Sourcemaps off by default because relative paths are "buggy"
