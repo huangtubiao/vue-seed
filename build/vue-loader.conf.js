@@ -17,3 +17,5 @@ module.exports = {
         require('postcss-px2rem')({remUnit: 34.5})
     ]
 }
+
+// http://vue-loader.vuejs.org/en/

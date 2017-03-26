@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+@main-color: #fee4fd;
+
+.ws_wrap {
+    background: #eee1ff url('./images/bg.jpg') center top no-repeat;
+    background-size: 100%;
+}
+.ws_header {
+    padding-top: 300px;
+    color: #f2e5fe;
+    font-size: 18px;
+    text-align: center;
+}
+.ws_content {
+    .rank_wrap {
+        padding: 15px;
+    }
+    .rank_tabs {
+        text-align: center;
+        margin-bottom: 5px;
+        .tab {
+            display: inline-block;
+            width: 4.4375rem;
+            height: 1.0625rem;
+            background-repeat: no-repeat;
+            background-size: contain;
+            &:first-child {
+                float: left;
+            }
+            &:last-child {
+                float: right;
+            }
+        }
+        .tab_anchor {
+            background-image: url('./images/btn_anchor.png');
+            &.active {
+                background-image: url('./images/btn_anchor_active.png');
+            }
+        }
+        .tab_rich {
+            background-image: url('./images/btn_rich.png');
+            &.active {
+                background-image: url('./images/btn_rich_active.png');
+            }
+        }
+    }
+    .rank_content {
+        position: relative;
+        background-color: #a149fc;
+        .header {
+            padding: 10px;
+        }
+        .title {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            height: 60px;
+            background-image: url('./images/rank_rich_title.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            &.if_anchor_rank {
+                background-image: url('./images/rank_anchor_title.png');
+            }
+        }
+        .tabs {
+            float: right;
+            color: @main-color;
+            line-height: 65px;
+            vertical-align: middle;
+        }
+        .tabs_li {
+            width: 35px;
+            font-size: 13px;
+            display: inline-block;
+            a {
+                color: #fff;
+            }
+            &.active {
+                a {
+                    color: #54edff;
+                }
+            }
+            &:after {
+                position: relative;
+                bottom: 0.5px;
+                left: 3px;
+                display: inline-block;
+                content: '';
+                border-right: 2px solid @main-color;
+                width: 2px;
+                height: 13px;
+                vertical-align: middle;
+            }
+            &:last-child:after {
+                border-right: none;
+            }
+        }
+    }
+    .rank_left_bg, .rank_right_bg {
+        position: absolute;
+        top: .125rem;
+        height: 98%;
+    }
+    .rank_right_bg {
+        right: 0;
+    }
+    .rank_items {
+        padding: 10px;
+        min-height: 550px;
+    }
+    .rank_item {
+        margin-bottom: 10px;
+        color: @main-color;
+    }
+    .item_block {
+        display: inline-block;
+    }
+    .rank_gift {
+        .gift_avatar {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            vertical-align: middle;
+        }
+        .gift_name_wrap {
+            position: relative;
+            top: 2px;
+            display: inline-block;
+            line-height: 15px;
+            vertical-align: middle;
+        }
+        .gift_name {
+            font-size: 13px;
+        }
+    }
+    .rank_anchor {
+        float: right;
+        line-height: 43px;
+        .level_icon, .anchor_name {
+            vertical-align: middle;
+        }
+        .anchor_name {
+            color: #54edff;
+            font-size: 13px;
+        }
+        .live_status_icon {
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+            background-image: url('./images/reset.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            &.living {
+                background-image: url('./images/living.gif');
+            }
+        }
+    }
+}
+.ws_footer {
+    padding: 0px 20px;
+    height: 100px;
+    background: #eee1ff url('./images/footer.jpg') no-repeat;
+    background-size: cover;
+    .btn_open_app {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        background-color: #8e21ff;
+    }
+}

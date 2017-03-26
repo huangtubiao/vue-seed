@@ -77,9 +77,10 @@ app.use(hotMiddleware)
 // 拼接 static 文件夹的静态资源路径
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 // 为静态资源提供响应服务
+console.dir(staticPath);
 app.use(staticPath, express.static('./static'))
 
-var uri = 'http://localhost:' + port
+var uri = 'http://qftest.56.com:' + port;
 
 devMiddleware.waitUntilValid(function() {
     console.log('> Listening at ' + uri + '\n')

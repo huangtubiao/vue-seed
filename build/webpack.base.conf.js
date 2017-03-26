@@ -1,17 +1,17 @@
-var path = require('path')
-var utils = require('./utils')
-var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
-var entries = utils.getEntry('./src/views/**/*.js') // 获得入口js文件
+var path = require('path');
+var utils = require('./utils');
+var config = require('../config');
+var vueLoaderConfig = require('./vue-loader.conf');
+var entries = utils.getEntry('./src/views/**/*.js'); // 获得入口js文件
 
 // 拼接我们的工作区路径为一个绝对路径
 function resolve(dir) {
-    return path.join(__dirname, '..', dir)
+    return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
     entry: Object.assign(entries, {
-        vendors : ['flexible']
+        vendors : ['flexible', 'zepto']
     }),
     output: {
         // 编译输出的根路径
@@ -38,7 +38,8 @@ module.exports = {
             'services': resolve('src/services'),
             'components': resolve('src/components'),
             'directives': resolve('src/directives'),
-            flexible: resolve('./src/common/libs/flexible.js')
+            'common': resolve('src/common'),
+            flexible: resolve('src/libs/flexible.min.js')
         }
     },
     module: {
@@ -72,6 +73,9 @@ module.exports = {
                 limit: 10000,
                 name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
             }
+        },{
+            test: require.resolve('zepto'),
+            loader: 'exports-loader?window.Zepto!script-loader'
         }]
     }
 }

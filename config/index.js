@@ -1,5 +1,5 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
-var path = require('path')
+var path = require('path');
 
 module.exports = {
     // production 环境
@@ -12,7 +12,7 @@ module.exports = {
         // 编译输出的二级目录
         assetsSubDirectory: 'static',
         // 编译发布上线路径的根目录，可配置为资源服务器域名或 CDN 域名
-        assetsPublicPath: '/',
+        assetsPublicPath: 'http://file.qf.56.com/f/',
         // 是否开启 cssSourceMap
         productionSourceMap: true,
         // Gzip off by default as many popular static hosts such as
@@ -43,8 +43,16 @@ module.exports = {
         assetsPublicPath: '/',
         // 需要 proxyTable 代理的接口（可跨域）
         proxyTable: {
-            '/api': {
-                target: 'http://qf.56.com',
+            '/mockApi/': {
+                target: 'http://localhost:3001',
+                changeOrigin: true,
+                logLevel: 'debug',
+                pathRewrite: {
+                    '^/mockApi': ''
+                }
+            },
+            '/api/': {
+                target: 'http://10.10.92.111',
                 changeOrigin: true,
                 logLevel: 'debug',
                 pathRewrite: {
@@ -59,5 +67,9 @@ module.exports = {
         // just be aware of this issue when enabling this option.
         // 是否开启 cssSourceMap
         cssSourceMap: false
+    },
+    mock: {
+        // 使用 config/mock.env.js 中定义的编译环境
+        env: require('./mock.env')
     }
 }

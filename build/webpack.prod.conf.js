@@ -1,12 +1,12 @@
-var path = require('path')
-var utils = require('./utils')
-var webpack = require('webpack')
-var config = require('../config')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var env = config.build.env
+var path = require('path');
+var utils = require('./utils');
+var webpack = require('webpack');
+var config = require('../config');
+var merge = require('webpack-merge');
+var baseWebpackConfig = require('./webpack.base.conf');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var env = config.build.env;
 
 var webpackConfig = merge(baseWebpackConfig, {
     module: {
@@ -43,7 +43,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         }),
         // split vendor js into its own file
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
+            name: 'vendors',
             minChunks: function(module, count) {
                 // any required modules inside node_modules are extracted to vendor
                 return (
@@ -59,7 +59,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         // prevent vendor hash from being updated whenever app bundle is updated
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
-            chunks: ['vendor']
+            chunks: ['vendors']
         })
     ]
 })
@@ -95,6 +95,7 @@ for (var pathname in pages) {
         filename: pathname + '.html',
         template: pages[pathname], // 模板路径
         inject: true,              // js插入位置
+        chunks: ['vendors', 'manifest', pathname],
         minify: {
             removeComments: true,
             collapseWhitespace: true,
